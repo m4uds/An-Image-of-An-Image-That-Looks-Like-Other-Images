@@ -14,6 +14,8 @@ engine = pyttsx3.init() # object creation
 #print(voices)
 
 
+
+
 model = VisionEncoderDecoderModel.from_pretrained("model/vit-gpt2-image-captioning")
 feature_extractor = ViTFeatureExtractor.from_pretrained("model/vit-gpt2-image-captioning")
 tokenizer = AutoTokenizer.from_pretrained("model/vit-gpt2-image-captioning")
@@ -50,8 +52,7 @@ while True:
   ret,frame = camera.read() # return a single frame in variable `frame`
   #cv2.imshow('img1',frame) #display the captured image
   cv2.imwrite('frame.png',frame) # 
-  caption = predict_step(['frame.png'])[0] # ['a woman in a hospital bed with a woman in a hospital bed']
-  
+  caption = predict_step(['frame.png'])[0]
   #os.remove("frame.png") #Use when code goes into production
   print(caption)
   engine.say(caption)
@@ -59,3 +60,4 @@ while True:
   
   time.sleep(1)
   #cv2.destroyAllWindows()
+

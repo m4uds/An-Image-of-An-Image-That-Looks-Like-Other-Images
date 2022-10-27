@@ -2,3 +2,8 @@
 model.zip
 model/vit-gpt2-image-captioning/
 .DS_Store
+.DS_Store
+model/gpt-neo-1.3B/
+notorch.py
+titles.csv
+frame.png
