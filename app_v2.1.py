@@ -48,35 +48,35 @@ def generate_image_caption(image_paths):
     print(preds)
     return preds
 def convert_text_to_beep_bop(text):
-    beep_bob = ""
-    normalized_binary = ""
-    a_bytes = bytes(text, "utf8")
-    binary = ' '.join(["{0:b}".format(x) for x in a_bytes])
-    binary = binary.split(" ")
-    #binary = binary.replace(" ","")
+        beep_bob = ""
+        normalized_binary = ""
+        a_bytes = bytes(text, "utf8")
+        binary = ' '.join(["{0:b}".format(x) for x in a_bytes])
+        binary = binary.split(" ")
+        #binary = binary.replace(" ","")
 
-    for encodeed in binary:
+        for encodeed in binary:
+            
+            if len(encodeed) < 8:
+                numZ = 8 - len(encodeed)
+                i = 0
+                while i < numZ:
+                    encodeed = "0" + encodeed
+                    i = i+1
+            
+            normalized_binary = encodeed + " "
+                    
         
-        if len(encodeed) < 8:
-            numZ = 8 - len(encodeed)
-            i = 0
-            while i < numZ:
-                encodeed = "0" + encodeed
-                i = i+1
         
-        normalized_binary = encodeed + " "
-                
-    
-    
-    print(normalized_binary)
-    
-    for byte in normalized_binary:
+        print(normalized_binary)
         
-        if byte == "0":
-            beep_bob = beep_bob + " beep,"
-        else: 
-            beep_bob = beep_bob + " bop,"
-    return beep_bob 
+        for byte in normalized_binary:
+            
+            if byte == "0":
+                beep_bob = beep_bob + " beep,"
+            else: 
+                beep_bob = beep_bob + " bop,"
+        return beep_bob 
 
 camera = cv2.VideoCapture(0) # video capture source camera 
 
@@ -88,10 +88,16 @@ while True:
     caption = generate_image_caption(['frame.png'])[0] 
     print(caption)
     os.remove("frame.png") #delete image
-    caption = convert_text_to_beep_bop(caption)
+    caption = convert_text_to_beep_bop("LEts test this").split()
     print(caption)
-    engine.say(caption)
-    engine.runAndWait()
+
+    i = 0
+    for char in caption:
+        if i % 8 == 0:
+            time.sleep(4)
+        engine.say(char)
+        engine.runAndWait()
+ 
   
     time.sleep(10)
 
