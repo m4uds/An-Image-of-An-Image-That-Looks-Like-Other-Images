@@ -1,0 +1,88 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+#display-cont{
+    width: 90vw;
+    height: 99vh;
+    
+}
+
+#bottom{
+    bottom: 5px;
+    display: block;
+    position:fixed;
+    width: 90vw;
+
+}
+
+#button-cont{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#button-cont button{
+    
+    background-color: whitesmoke;
+    display:block;
+    height: 30vw;
+    width: 45vw;
+    border-radius: 50%;
+    border: 1px solid whitesmoke;
+    margin-left: 3px;
+    margin-right: 3px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: large;
+    font-weight: 500;
+    box-shadow: grey 2px 2px 5px;
+    transition-timing-function: ease-out;
+    
+   
+}
+
+#binary-cont{
+    display: flex;
+    justify-content: center;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: xx-small;
+
+}
+
+h1{
+    font-family: Arial;
+    font-weight: bold;
+    text-align: justify;
+    font-size: xx-large;
+    display: inline;
+}
+
+#next-char{
+    opacity: 0;
+    
+}
+
+#details{
+    font-family: Arial;
+    font-size: x-small;
+    font-weight: bold;
+    max-width: 75vw;
+}
+#details a{
+    font-size:small;
+    font-weight: bolder;
+    margin-bottom: 6px;
+}
+
+#text-cont{
+    font-family: Arial;
+    font-weight: bold;
+    text-align: justify;
+    font-size: xx-large;
+    display: inline;
+    background-color: red;
+}
