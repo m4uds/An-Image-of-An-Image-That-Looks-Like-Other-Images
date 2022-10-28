@@ -17,7 +17,7 @@ function addBinary(newBinary){
     //get len of string in #binary
     //if 8 delete
     
-    if ($("#binary").text().length == 8){
+    if ($("#binary").text().length == 7){
         $("#binary").html("");
     }
 
@@ -34,7 +34,7 @@ function addBinary(newBinary){
     //check if 8chars
     //if so add char to decoded text
 
-    if ($("#binary").text().length == 8){
+    if ($("#binary").text().length == 7){
         
         //decode binary to char
         var newChar = String.fromCharCode(parseInt($("#binary").text(), 2)).toLowerCase(); 
@@ -46,32 +46,47 @@ function addBinary(newBinary){
     }}
 
 $( "#beep" ).click(function() {
-        navigator.vibrate(200)
+        
         addBinary(0);
+
+        $( "#beep" ).css('transition', "all 100ms" )
+        $( "#beep" ).css('box-shadow', 'grey 0.1px 0.1px 1px');
+        const myTimeout = setTimeout(function(){
+            $( "#beep" ).css('transition', "all 5s ease-out" );
+            $( "#beep" ).css('box-shadow', 'grey 2px 2px 5px');
+            clearTimeout(myTimeout)
+        }, 150);
+
+
+    
+
+
       });
 $( "#bop" ).click(function() {
-        navigator.vibrate(200)
+        
         addBinary(1);
+
+        $( "#bop" ).css('transition', "all 100ms" )
+        $( "#bop" ).css('box-shadow', 'grey 0.1px 0.1px 1px');
+        const myTimeout = setTimeout(function(){
+            $( "#bop" ).css('transition', "all 5s ease-out" );
+            $( "#bop" ).css('box-shadow', 'grey 2px 2px 5px');
+            clearTimeout(myTimeout)
+        }, 150);
+
       });
 
-//animate drop shadows
-$( "#beep" ).mouseover(function() {
-    $( "#beep" ).css('transition', "all 100ms")
-    $( "#beep" ).css('box-shadow', 'grey 0.1px 0.1px 1px');
-});
+    
+$("#clear").click(function() {
+    $("#decoded").html("An image of an image that looks like ");
+    $("#binary").html("")
+    $( "#clear" ).css('transition', "all 100ms" )
+        $( "#clear" ).css('box-shadow', 'grey 0.1px 0.1px 1px');
+        const myTimeout = setTimeout(function(){
+            $( "#clear" ).css('transition', "all 5s ease-out" );
+            $( "#clear" ).css('box-shadow', 'grey 1px 1px 2px');
+            clearTimeout(myTimeout)
+        }, 150);
+ 
+    });
 
-$( "#beep" ).mouseleave(function() {
-    $( "#beep" ).css('transition', "all 2s")
-    $( "#beep" ).css('box-shadow', 'grey 2px 2px 5px');
-});
-
-//animate drop shadows
-$( "#bop" ).mouseover(function() {
-    $( "#bop" ).css('transition', "all 100ms" )
-    $( "#bop" ).css('box-shadow', 'grey 0.1px 0.1px 1px');
-});
-
-$( "#bop" ).mouseleave(function() {
-    $( "#bop" ).css('transition', "all 2s")
-    $( "#bop" ).css('box-shadow', 'grey 2px 2px 5px');
-});
