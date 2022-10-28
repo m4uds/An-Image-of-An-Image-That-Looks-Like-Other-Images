@@ -17,7 +17,7 @@ function addBinary(newBinary){
     //get len of string in #binary
     //if 8 delete
     
-    if ($("#binary").text().length == 7){
+    if ($("#binary").text().length == 8){
         $("#binary").html("");
     }
 
@@ -34,7 +34,7 @@ function addBinary(newBinary){
     //check if 8chars
     //if so add char to decoded text
 
-    if ($("#binary").text().length == 7){
+    if ($("#binary").text().length == 8){
         
         //decode binary to char
         var newChar = String.fromCharCode(parseInt($("#binary").text(), 2)).toLowerCase(); 
