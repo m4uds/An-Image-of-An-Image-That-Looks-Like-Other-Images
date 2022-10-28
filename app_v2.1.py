@@ -56,17 +56,16 @@ def convert_text_to_beep_bop(text):
     #binary = binary.replace(" ","")
 
     for encodeed in binary:
-
+        
         if len(encodeed) < 8:
-    
             numZ = 8 - len(encodeed)
             i = 0
             while i < numZ:
                 encodeed = "0" + encodeed
                 i = i+1
+        
+        normalized_binary = encodeed + " "
                 
-      
-        normalized_binary = normalized_binary + encodeed
     
     
     print(normalized_binary)
