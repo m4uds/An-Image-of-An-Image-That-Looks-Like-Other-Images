@@ -70,6 +70,7 @@ def convert_text_to_beep_bop(text):
     
     
     print(normalized_binary)
+    
     for byte in normalized_binary:
         
         if byte == "0":
@@ -90,12 +91,10 @@ while True:
     os.remove("frame.png") #delete image
     caption = convert_text_to_beep_bop(caption)
     print(caption)
-    
     engine.say(caption)
     engine.runAndWait()
   
     time.sleep(10)
-    
-    #cv2.destroyAllWindows()
+
 
 
