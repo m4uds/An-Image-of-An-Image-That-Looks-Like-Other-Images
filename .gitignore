@@ -7,3 +7,4 @@ model/gpt-neo-1.3B/
 notorch.py
 titles.csv
 frame.png
+.DS_Store
